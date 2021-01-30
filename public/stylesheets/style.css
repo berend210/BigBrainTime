@@ -1,0 +1,223 @@
+
+/* 
+Over-coupling items
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+  overflow: hidden;
+}
+
+@-ms-viewport {
+	width: device-width;
+} /* Set device width to width */
+
+body {
+  margin: 0;
+  padding: 10px;
+  height: 100vh;
+  width: 100%;
+}
+
+main {
+  background-color: #0094FF;
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+img, #leftText {
+  user-select: none;
+}
+
+/* 
+Background
+*/
+#background {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.brains {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#rightBrain {  
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+
+
+
+/* 
+Messages
+*/
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.screenErr, .message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Message template */
+.messageBox {
+  min-height: 20%;
+  width: 30%;
+  background: linear-gradient(#F08080, #FF9955);
+  opacity: 0.98;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+  padding: 10px;
+  text-align: center;
+}
+
+#messageTitle {
+  font-size: 35px;
+}
+
+#messageDesc {
+  font-size: 18px;
+}
+
+/* Screen Error (wrong resolution) */
+.screenErr {
+  background: linear-gradient(#e66465, #9198e5);
+  z-index: 100;
+}
+
+.screenMsg {
+  text-align: center;
+}
+
+.screenMsg h2 {
+  font-size: 30px;
+}
+
+.screenMsg p, .screenMsg span {
+  font-size: 20px;
+}
+
+.screenMsg span {
+  color: red;
+}
+
+/* 
+Media Queries
+*/
+@media only screen and (min-width: 1600px) and (min-height: 850px) {
+  .screenErr {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+/* 
+Animations
+*/
+.rainbow-animation {
+  animation: rainbow-text 8s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-text{
+  100%,0%{
+    color: #FF0000;
+  }
+  8%{
+    color: #dc7633 ;
+  }
+  16%{
+    color: #f4d03f ;
+  }
+  25%{
+    color: #abebc6 ;
+  }
+  33%{
+    color: #2ecc71;
+  }
+  41%{
+    color: #27ae60;
+  }
+  50%{
+    color: #85c1e9;
+  }
+  58%{
+    color: #3498db ;
+  }
+  66%{
+    color: #2471a3 ;
+  }
+  75%{
+    color: #bb8fce ;
+  }
+  83%{
+    color: #9b59b6;
+  }
+  91%{
+    color: #e74c3c;
+  }
+}
+
+@keyframes rainbow-bg{
+  100%,0%{
+    background: #FF0000;
+  }
+  8%{
+    background: #dc7633;
+  }
+  16%{
+    background: #f4d03f;
+  }
+  25%{
+    background: #abebc6;
+  }
+  33%{
+    background: #2ecc71;
+  }
+  41%{
+    background: #27ae60;
+  }
+  50%{
+    background: #85c1e9;
+  }
+  58%{
+    background: #3498db;
+  }
+  66%{
+    background: #2471a3;
+  }
+  75%{
+    background: #bb8fce;
+  }
+  83%{
+    background: #9b59b6;
+  }
+  91%{
+    background: #e74c3c;
+  }
+}

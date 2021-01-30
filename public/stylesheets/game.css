@@ -1,0 +1,293 @@
+/* 
+Background-specific
+*/
+.textContainer {
+    position: absolute;
+    font-size: 30px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 
+Boards
+*/
+
+.boards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: .98;
+}
+
+#left, #right {
+    position: relative;
+    height: 85%;
+    width: 25%;
+    background-color: #18197F;
+    display: inline;
+    margin: 0 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Left Board */
+.row {
+    width: 100%;
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.col, .pin, .color {
+    background-color: #5E89FF;
+    border: black 1px solid;
+    border-radius: 50%;
+}
+
+.col {                       /* REMOVE #row1 FOR GETTING ALL ROWS*/
+    width: 37px;
+    height: 37px;
+    margin: 0 2px;
+}
+
+.pin {
+    width: 25px;
+    height: 25px;
+    margin: 0 1px;
+}
+
+.pin1 {
+    margin-left: 30px;
+}
+
+/*  Right board */
+#right h2 {
+    color: #5E89FF;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    justify-content: center;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    margin: 10px 10px;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+
+.color:hover {
+    opacity: .8;
+}
+
+.color:active {
+    opacity: .6;
+}
+
+#color1 {
+    background-color: #4CFF00;
+}
+
+#color2 {
+    background-color: #B200FF;
+}
+
+#color3 {
+    background-color: #FF8900;
+}
+
+#color4 {
+    background-color: #FFD800;
+}
+
+#color5 {
+    background-color: #0026FF;
+}
+
+#color6 {
+    background-color: #FF0000;
+}
+
+/* Action buttons (delete / send) */
+.action-btns {
+    display: grid;
+    grid-template-columns: 80px 80px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.action-btns button {
+    border: black 1px solid;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 10px 10px;
+    cursor: pointer;
+    transition: opacity .1s;
+}
+
+#remove-btn {
+    position: relative;
+    background-color: red;
+}
+
+#remove-btn::before, #remove-btn::after {
+    background-color: black;
+    position: absolute;
+    right: 9px;
+    top: 28px;
+    width: 40px;
+    height: 4px;
+    content: ' ';
+}
+
+#remove-btn::before {
+    transform: rotate(-45deg);
+}
+
+#remove-btn::after {
+    transform: rotate(45deg);
+}
+
+#send-btn {
+    background-color: #32CD32;
+    position: relative;
+}
+
+#send-btn::after {
+    content: ' ';
+    position: absolute;
+    transform: rotate(45deg);
+    height: 40px;
+    width: 25px;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    top: 6px;
+    right: 16px;
+}
+
+#send-btn:hover, #remove-btn:hover {
+    animation: spin-animation 1s linear infinite;
+}
+
+.action-btns button:active {
+    opacity: .7;
+}
+
+/* Black / White buttons */
+.good-colors {
+    display: grid;
+    grid-template-columns: 80px 80px;
+    justify-content: center;
+}
+
+#white {
+    background-color: white;
+}
+
+#black {
+    background-color: black;
+}
+
+/* SecretColor row */
+.secretCode {
+    position: relative;
+    padding: 5% 0;
+    /* margin: 30px; */
+  }
+
+/* Stats part */
+.info {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    bottom: 10px;
+    padding: 5px;
+    background-color: #5E89FF;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#status {
+    color: purple;
+    font-size: 16px;
+}
+
+/* 
+Animations
+*/
+@keyframes spin-animation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 
+!!!!!! COLORS THAT HAVE PRIORITY !!!!!
+*/
+/* 
+Colors
+*/
+.green {
+    background-color: #4CFF00;
+}
+
+.purple {
+background-color: #B200FF;
+}
+
+.orange {
+background-color: #FF8900;
+}
+
+.yellow {
+background-color: #FFD800;
+}
+
+.blue {
+background-color: #0026FF;
+}
+
+.red {
+background-color: #FF0000;
+}
+
+.white {
+background-color: white;
+}
+
+.black {
+background-color: black;
+}

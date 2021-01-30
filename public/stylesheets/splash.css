@@ -1,0 +1,153 @@
+/* 
+Background-specific
+*/
+.textContainer {
+    text-align: center;
+    font-size: 40px;
+
+}
+
+/* p (tag), .p (class), #p (id) */
+
+.textContainer p {
+    font-size: 20px;
+}
+
+/* 
+Buttons
+*/
+#buttons {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    align-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    padding: 20px;
+    z-index: 10;
+}
+
+.buttonsMain, .statsMain {
+    position: relative;
+    width: 80%;
+    margin: 10% 10%;
+    height: 80%;
+    align-self: center;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7); 
+    font-family: 'Libre Baskerville', serif;
+}
+
+#howToPlay, #play {
+    cursor: pointer;
+}
+
+#howToPlay {
+    font-size: 50px;
+    background-color: red;
+}
+
+#play {
+    font-size: 60px;
+    background-color: #4CFF00;
+}
+
+#play::after {
+    border-radius: 30px;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    /* width: 0; */
+    height: 100%;
+    transition: all 0.1s;
+    background-color: none;
+    width: 10%;
+}
+
+#play:hover::after {
+    background-color: #fe4a49;
+    width: 20%;
+}
+
+#play:active::after {
+    width: 100%;
+}
+
+/* linear-gradient(to right, #fc466b, #3f5efb) */
+
+#statistics {
+    font-size: 22px;
+    background-color: #5E89FF;
+}
+
+/* 
+How To Play
+*/
+.gameInfo {
+    left: 0;
+    position: absolute;
+    top: -300%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 75;
+    transition: .4s ease;
+}
+
+.gameInfo-box {
+    width: 80%;
+    min-height: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: red;
+    z-index: 76;
+}
+
+.gameInfo h3 {
+    font-size: 30px;
+}
+
+.gameInfo p {
+    font-size: 25px;
+}
+
+#infoClose {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#infoClose::before, #infoClose::after {
+    background-color: black;
+    position: absolute;
+    right: 4px;
+    top: 15px;
+    width: 40px;
+    height: 4px;
+    content: ' ';
+    z-index: 76;
+}
+
+#infoClose::before {
+    transform: rotate(-45deg);
+}
+
+#infoClose::after {
+    transform: rotate(45deg);
+}
+
+#infoClose:hover::before, #infoClose:hover::after {
+    animation: rainbow-bg 1s infinite;
+}

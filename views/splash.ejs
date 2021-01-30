@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>BIG BRAIN TIME</title>
+
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="stylesheets/style.css">
+            <link rel="stylesheet" href="stylesheets/splash.css">
+            
+            <!-- Fonts by Google:) -->
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+        </head>
+
+        <body>
+            <main>
+
+                <div id="background">
+					<div class="brains">
+						<img id="leftBrain" src="images/brain.png">
+                        <div class="textContainer"><h1 id="midleText" class="rainbow-animation">Big<br>Brain<br>Time</h1><p class="rainbow-animation">Created by:<br>Berend Bleeker &<br>Matthijs van Andel</p></div>
+						<img id="rightBrain" src="images/brain.png">
+					</div>
+					
+				</div>
+
+                <section id="buttons">
+                    <button id="howToPlay" class="buttonsMain">How to play</button>
+                    <button id="play" class="buttonsMain" onclick="location.href='game'">Play</button>
+                    <div id="statistics" class ="statsMain">
+                        <p id="currentGames">Games started: <span><%= gamesStarted %></span></p>
+                        <p id="gamesAborted">Games aborted: <span><%= gamesAborted %></span></p>
+                        <p id="onlinePlayers">Players online: <span><%= playersOnline %></span></p>
+                    </div>
+                </section>
+
+                <div class="gameInfo" id="info-bg-close">
+                    <div class="gameInfo-box">
+                        <button id="infoClose"></button>
+                        <h3>How To Play</h3>
+                        <p> 
+                            This is mastermind. If you are player 1, you have to insert your secret code. This is done by clicking on the colours. A colour can be used only once! If you are player 2, you have to make educated guesses on the code of your opponent. Each time player 2 guesses by clicking on 4 colours and then the checkmark button, player 1 reacts with how close you were; a white pin means you got a colour correct but not in the right spot, a black pin means that one pin has the right colour and is also in the right spot. You do not know which black or white pin corresponds to the guesses made. Player 2 gets 15 tries; best of luck!
+                        </p>
+                    </div>
+                </div>
+
+                <div id="msgBox" class="message hidden">
+					<div class="messageBox">
+						<h2 id="messageTitle"></h2>
+						<p id="messageDesc"></p>
+					</div>
+				</div>
+
+				<div class="screenErr">
+					<div class="screenMsg">
+						<h2>You have the wrong screen resolution</h2>
+						<p>The minimum screen resolution to be able to play this game is: 1600 x 850</p>
+						<p>Your screen resolution is: <span id="userResolution"></span></p>
+					</div>
+				</div>
+
+            </main> <!-- The blue background -->
+
+            <!-- JavaScript includes -->
+			<script src="javascripts/general.js"></script>
+            <script src="javascripts/splash.js"></script>
+        </body>
+    </html>
